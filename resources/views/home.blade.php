@@ -47,6 +47,9 @@
           </div>
         </div>
         @endforeach
+        <div class='col-md-12'>
+          {{$posts->appends(['test'=>request()->test])->links('vendor.pagination.bootstrap-4')}}
+        </div>
           @else
           <h1 md-3>Здесь будут посты после авторизации</h1>
         @endif

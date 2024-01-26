@@ -193,7 +193,7 @@ class HomeController extends Controller
 
 
         $title = 'Home page';
-        $posts = Post::orderBy('id', 'desc')->get();
+        $posts = Post::orderBy('id', 'desc')->paginate(3);
         return view('home', compact('title', 'posts'));
     }
     public function show()

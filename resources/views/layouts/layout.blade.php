@@ -196,8 +196,15 @@
               @endif
               @auth
               <li><a href="{{route('post.create')}}" class="text-white">Create Post</a></li>
-
+              <a href="#">
+                    {{  auth()->user()->name  }}
+                    @if (auth()->user()->avatar)
+                    <img src="{{  asset('storage/app/'  .  auth()->user()->avatar)  }}" alt="" height="40" >
+                    @endif
+                    </a>
               <li>{{ dump(Auth::check()) }}</li>
+             
+             
               <li><a href="{{route('logout')}}" class="text-white">Logout</a></li>
 
 

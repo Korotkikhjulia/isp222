@@ -19,7 +19,7 @@
         </div>
         @endif -->
     </div>
-    <form class="mt-5" action="{{route('user.store')}}" method="POST">
+    <form class="mt-5" action="{{route('user.store')}}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="mb-3 mt-5">
             @error('name')
@@ -48,6 +48,11 @@
         <div class="mb-3 mt-5">
             <label for="password" class="form-label">Password</label>
             <input type="password" name="password_confirmation" class="form-control" id="password_confirmation" placeholder="Password" value="">
+        </div>
+
+        <div class="form-group">
+            <label for="avatar">Avatar</label>
+            <input type="file" class="form-control-file" id="avatar" name="avatar">
         </div>
        
 
